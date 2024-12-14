@@ -1,0 +1,13 @@
+{% extends "diary/base.html" %}
+{% block content %}
+    <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+        <div class="container-fluid py-3">
+            <form method="post">
+                {% csrf_token %}
+                <p>Estas seguro que quieres borrar esta entrada del diario?</p>
+                <input class="btn btn-custom" type="submit" value="Si, estoy seguro">
+            </form>
+            <a class="btn btn-secondary"  role="button" href="{% url 'entry-list' %}">Cancelar</a>
+        </div>    
+    </div>
+{% endblock %}

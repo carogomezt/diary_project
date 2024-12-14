@@ -1,0 +1,17 @@
+{% extends "diary/base.html" %}
+
+{% block content %}
+    <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+        <div class="container-fluid py-3">
+            <h1 class="display-5 fw-bold">{{ entry.title }}</h1>
+            <small class="bg-secondary-subtle"><em>Creado: {{ entry.created_at|date:'Y-m-d H:i' }}</em></small>
+            <p>{{ entry.content }}</p>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a class="btn btn-custom" role="button" href="{% url 'entry-update' id=entry.id %}">Editar</a>
+            <a class="btn btn-danger"  role="button" href="{% url 'entry-delete' id=entry.id %}">Borrar</a>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}

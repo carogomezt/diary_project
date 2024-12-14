@@ -1,0 +1,15 @@
+h1 a {
+    text-decoration: none;
+    color: #6f42c1;
+}
+
+.btn-custom {
+    background-color: #6f42c1;
+    color: white;
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: #a98eda;
+    color: white;
+}
